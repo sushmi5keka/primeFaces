@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html data-ng-app="myApp">
+    <head>
+        <title>TODO list</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>Sushmi's to do list</h1>
+        </div>
+        <div>
+            <p>Name : <input type="text" ng-model="name"></p>
+            <h1>Hello {{name}}</h1>
+        </div>
+
+        <div>
+            <p>Name: <input type="text" ng-model="n"></p>
+            <p ng-bind="n"></p>
+        </div>
+
+        <div ng-init="firstName = 'John'">
+
+            <p>The name is <span ng-bind="firstName"></span></p>
+
+        </div>
+
+        <div data-ng-init="firstNamee = 'moly'">
+
+            <p>The name is <span data-ng-bind="firstNamee"></span></p>
+
+        </div>
+
+        <div >
+            <p>My first expression: {{ 50 + 50}}</p>
+        </div>
+
+        <div>
+            <p>Name: <input type="text" ng-model="name"></p>
+            <p>{{name}}</p>
+        </div> 
+
+        <div  ng-controller="myCtrl">
+
+            First Name: <input type="text" ng-model="firstName"><br>
+            Last Name: <input type="text" ng-model="lastName"><br>
+            <br>
+            Full Name: {{firstName + " " + lastName}}
+
+        </div>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function ($scope) {
+                $scope.firstName = "John";
+                $scope.lastName = "Doe";
+            });
+        </script>
+
+        <div>
+            <p>My first expression: {{ 5 + 5}}</p>
+        </div>
+
+        <div ng-init="quantity = 1;cost = 5">
+
+            <p>Total in dollar: {{ quantity * cost}}</p>
+
+        </div>
+
+        <div ng-init="quantity = 1;cost = 5">
+
+            <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+
+        </div>
+
+        <div ng-init="firstName = 'John';lastName = 'Doe'">
+
+            <p>The name is {{ firstName + " " + lastName}}</p>
+
+        </div>
+
+        <div ng-init="firstName = 'John';lastName = 'Doe'">
+
+            <p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+
+        </div>
+
+        <div ng-init="person={firstName:'John',lastName:'Doe'}">
+
+            <p>The name is {{ person.lastName}}</p>
+
+        </div>
+
+        <div ng-init="person={firstName:'John',lastName:'Doe'}">
+
+            <p>The name is <span ng-bind="person.lastName"></span></p>
+
+        </div>
+
+        <div ng-init="points = [1, 15, 19, 2, 40]">
+
+            <p>The third result is {{ points[2]}}</p>
+
+        </div>
+
+        <div ng-init="points = [1, 15, 19, 2, 40]">
+
+            <p>The third result is <span ng-bind="points[2]"></span></p>
+
+        </div>
+
+    </body>
+</html>

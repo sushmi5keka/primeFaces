@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="myApp">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style>
+            #a.ng-invalid {
+                background-color: lightpink;
+            }
+             #b.ng-valid {
+                background-color: lightsalmon;
+            }
+             #c.ng-empty {
+                background-color: lightgreen;
+            }
+             #d.ng-dirty {
+                background-color: lightblue;
+            }
+             #e.ng-pending {
+                background-color: gray;
+            }
+             #f.ng-pristine {
+                background-color: lightseagreen;
+            }
+        </style>
+    </head>
+
+
+
+    <body>
+        <div  ng-controller="myCtrl">
+            Name: <input ng-model="name">
+        </div>
+
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function ($scope) {
+            $scope.name = "israt";
+            });
+        </script>
+
+
+        <div ng-controller="myCtrl">
+            Name: <input ng-model="namee">
+            <h1>You entered: {{namee}}</h1>
+        </div>
+
+        <form name="myForm">
+            Email :
+            <input type="email" name="myAddress" ng-model="text">
+            <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+        </form>
+
+        <form name="myForm" ng-init="myText = 'sushmi@gmail.com'">
+            Email:
+            <input type="email" name="myAddress" ng-model="myText" required>
+            <h1>Status</h1>
+            {{myForm.myAddress.$valid}}
+            {{myForm.myAddress.$dirty}}
+            {{myForm.myAddress.$touched}}
+        </form>
+
+
+
+
+        <form name="myFor">
+            Enter your name:
+            <input id="a" name="myName" ng-model="myTex" required><br/>
+            Enter your name:
+            <input id="b" name="myName" ng-model="myTe" required><br/>
+            Enter your name:
+            <input id="c" name="myName" ng-model="myT" required><br/>
+            Enter your name:
+            <input id="d" name="myName" ng-model="my" required><br/>
+            Enter your name:
+            <input id="e" name="myName" ng-model="m" required><br/>
+            Enter your name:
+            <input id="f" name="myName" ng-model="myy" required><br/>
+        </form>
+
+
+</html>

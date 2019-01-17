@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  ng-app="myApp" >
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body>
+        <h1>Filter</h1>
+        <div  ng-controller="personCtrl">
+
+            <p>The name is {{ firstName | uppercase }}</p>
+            <p>The name is {{ lastName | lowercase }}</p>
+        </div>
+
+        <script>
+            angular.module('myApp', []).controller('personCtrl', function ($scope) {
+            $scope.firstName = "John",
+                    $scope.lastName = "Doe"
+            });
+        </script>
+
+        <div ng-controller="namesCtrl">
+
+            <ul>
+                <li ng-repeat="x in names| orderBy:'country'">
+                    {{ x.name + ', ' + x.country}}
+                </li>
+            </ul>
+
+        </div>
+
+        <script>
+            angular.module('myApp', []).controller('namesCtrl', function ($scope) {
+            $scope.names = [
+            {name: 'Jani', country: 'Norway'},
+            {name: 'Carl', country: 'Sweden'},
+            {name: 'Margareth', country: 'England'},
+            {name: 'Hege', country: 'Norway'},
+            {name: 'Joe', country: 'Denmark'},
+            {name: 'Gustav', country: 'Sweden'},
+            {name: 'Birgit', country: 'Denmark'},
+            {name: 'Mary', country: 'England'},
+            {name: 'Kai', country: 'Norway'}
+            ];
+            });
+        </script>
+
+        <div ng-controller="costCtrl">
+
+            <h1>Price: {{ price | currency }}</h1>
+
+        </div>
+
+        <script>
+            angular.module('myApp', []).controller('costCtrl', function($scope) {
+            $scope.price = 58;
+            });
+        </script>
+
+        <div ng-controller="namesCtrl">
+
+            <ul>
+                <li ng-repeat="x in names| filter : 'a'">
+                    {{ x}}
+                </li>
+            </ul>
+
+        </div>
+
+        <script>
+            angular.module('myApp', []).controller('namesCtrl', function($scope) {
+            $scope.names = [
+                    'Jani',
+                    'Carl',
+                    'Margareth',
+                    'Hege',
+                    'Joe',
+                    'Gustav',
+                    'Birgit',
+                    'Mary',
+                    'Kai'
+            ];
+            });
+        </script>
+
+        <div ng-controller="namesCtrl">
+
+            <p>Type a letter in the input field:</p>
+
+            <p><input type="text" ng-model="test"></p>
+
+            <ul>
+                <li ng-repeat="x in names| filter:test">
+                    {{ x}}
+                </li>
+            </ul>
+
+        </div>
+
+        <script>
+            angular.module('myApp', []).controller('namesCtrl', function($scope) {
+            $scope.names = [
+                    'Jani',
+                    'Carl',
+                    'Margareth',
+                    'Hege',
+                    'Joe',
+                    'Gustav',
+                    'Birgit',
+                    'Mary',
+                    'Kai'
+            ];
+            });
+        </script>
+
+        <div ng-controller="namesCtrl">
+            <table border="1" width="100%">
+                <tr>
+                    <th ng-click="orderByMe('name')">Name</th>
+                    <th ng-click="orderByMe('country')">Country</th>
+                </tr>
+                <tr ng-repeat="x in names| orderBy:myOrderBy">
+                    <td>{{x.name}}</td>
+                    <td>{{x.country}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            angular.module('myApp', []).controller('namesCtrl', function($scope){
+
+            $scope.names = [
+            {name:'moly', country:'uganda'},
+            {name:'rojina', country:'thailand'},
+            {name:'mehidee', country:'suijarland'},
+            {name:'jubayar', country:'uganda'},
+            {name:'sushmi', country:'paris'}
+            ];
+            $scope.orderByMe = function(x){
+            $scope.myOrderBy = x;
+            }
+            });
+        </script>
+
+
+
+
+    </body>
+</html>

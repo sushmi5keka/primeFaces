@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <style type="text/css">
+    .ui-stack {
+        z-index: 1000;
+    }
+</style>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        
+        <p:stack icon="/resources/demo/images/dock/stack.png" expanded="true">
+    <p:menuitem value="Home" icon="/resources/demo/images/dock/home.png" url="#"/>
+    <p:menuitem value="Music" icon="/resources/demo/images/dock/music.png" url="#"/>
+    <p:menuitem value="Video" icon="/resources/demo/images/dock/video.png" url="#"/>
+    <p:menuitem value="Email" icon="/resources/demo/images/dock/email.png" url="#"/>
+    <p:menuitem value="Portfolio" icon="/resources/demo/images/dock/portfolio.png" url="#"/>
+</p:stack>
+        
+        <p:dock position="bottom">
+    <p:menuitem value="Home" icon="/resources/demo/images/dock/home.png" url="#"/>
+    <p:menuitem value="Music" icon="/resources/demo/images/dock/music.png" url="#"/>
+    <p:menuitem value="Video" icon="/resources/demo/images/dock/video.png" url="#"/>
+    <p:menuitem value="Email" icon="/resources/demo/images/dock/email.png" url="#"/>
+    <p:menuitem value="Portfolio" icon="/resources/demo/images/dock/portfolio.png" url="#"/>
+    <p:menuitem value="Link" icon="/resources/demo/images/dock/link.png" url="#"/>
+    <p:menuitem value="RSS" icon="/resources/demo/images/dock/rss.png" url="#"/>
+    <p:menuitem value="History" icon="/resources/demo/images/dock/history.png" url="#"/>
+</p:dock>
+    </h:body>
+</html>
+

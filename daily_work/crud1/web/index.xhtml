@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Form</h1>
+        <h:form>
+            Name :
+            <h:inputText value="#{studentBean.student.name}"></h:inputText>
+            
+            Gender :
+            <h:selectOneRadio value="#{studentBean.student.gender}">
+                <f:selectItem itemValue="male" itemLabel="male"></f:selectItem>
+                <f:selectItem itemValue="female" itemLabel="female"></f:selectItem>
+            </h:selectOneRadio>
+            
+            Round :
+            <h:selectOneMenu value="#{studentBean.student.round}">
+                <f:selectItem itemValue=" " itemLabel="select a Round"></f:selectItem>
+                <f:selectItem itemValue="Round-37" itemLabel="Round-37"></f:selectItem>
+                <f:selectItem itemValue="Round-38" itemLabel="Round-38"></f:selectItem>
+                <f:selectItem itemValue="Round-39" itemLabel="Round-39"></f:selectItem>
+            </h:selectOneMenu>
+            
+            Course :
+            <h:selectManyCheckbox value="#{studentBean.course}">
+            <f:selectItem itemValue="ssc" itemLabel="ssc"></f:selectItem>
+                <f:selectItem itemValue="hsc" itemLabel="hsc"></f:selectItem>
+                <f:selectItem itemValue="bba" itemLabel="bba"></f:selectItem>
+                <f:selectItem itemValue="mba" itemLabel="mba"></f:selectItem>
+            </h:selectManyCheckbox>
+            
+            Email :
+            <h:inputText value="#{studentBean.student.email}"></h:inputText>
+            
+            Password :
+            <h:inputSecret value="#{studentBean.student.password}"></h:inputSecret>
+            
+            Massage :
+            <h:inputTextarea value="#{studentBean.student.msg}"></h:inputTextarea>
+            
+            <h:commandButton value="save" action="#{studentBean.save()}"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+
